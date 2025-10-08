@@ -20,3 +20,27 @@ vector<int> tableBords(string pattern){
 
     return res;
 }
+
+int morrisPrat(string mot, string pattern){
+    int n = mot.size();
+    int m = pattern.size();
+    int occ = 0;
+    vector<int> bord = tableBords(pattern);
+    int i = 1; //sus
+    int j = 0; //double sus
+    while(i <= n-m+j+1){
+        while(j <= m && mot[i-1] == pattern[j]){
+        j++;
+        i++;
+        }
+        if(j == m){
+            occ++;
+        }
+        if(j == 0){
+            i++;
+        } else {
+            j = bord[j];
+        }
+    }
+    return occ;
+}
