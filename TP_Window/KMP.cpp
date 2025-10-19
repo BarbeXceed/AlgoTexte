@@ -10,7 +10,7 @@ vector<int> tableBordKMP(string pattern){
     int j = 0;
 
     for(int i = 2; i <= m; i++){
-        while(j >= 0 && pattern[j] != pattern[i]){
+        while(j >= 0 && pattern[j] != pattern[i-1]){
             j = res[j];
         }
         j++;
