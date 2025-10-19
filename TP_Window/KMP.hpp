@@ -6,6 +6,4 @@
 
 using namespace std;
 
-int kmp(string mot, string pattern);
-
 vector<int> tableBordKMP(string pattern);
