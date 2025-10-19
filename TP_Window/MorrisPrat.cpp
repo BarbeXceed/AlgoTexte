@@ -21,11 +21,11 @@ vector<int> tableBords(string pattern){
     return res;
 }
 
-int morrisPrat(string mot, string pattern){
+int algoWindow(string mot, string pattern, vector<int> (*funcBord)(string)){
     int n = mot.size();
     int m = pattern.size();
     int occ = 0;
-    vector<int> bord = tableBords(pattern);
+    vector<int> bord = funcBord(pattern);
     int i = 1; //sus
     int j = 0; //double sus
     while(i <= n-m+j+1){

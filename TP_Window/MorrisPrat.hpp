@@ -9,4 +9,4 @@ using namespace std;
 
 vector<int> tableBords(string pattern);
 
-int morrisPrat(string mot, string pattern);
+int algoWindow(string mot, string pattern, vector<int>(*funcBord)(string));
