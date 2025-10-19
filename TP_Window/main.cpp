@@ -2,6 +2,7 @@
 #include "MorrisPrat.hpp"
 #include "lectureFichier.hpp"
 #include "affichageVector.hpp"
+#include "KMP.hpp"
 
 int main(int argc, char* argv[]){
     if(argc < 3){
@@ -18,7 +19,8 @@ int main(int argc, char* argv[]){
         coutVector(tab);
         */
 
-        cout << morrisPrat(mot, pattern) << endl;
+        cout << algoWindow(mot, pattern, tableBords) << endl;
+        cout << algoWindow(mot, pattern, tableBordKMP) << endl;
         return EXIT_SUCCESS;
     }
 }
