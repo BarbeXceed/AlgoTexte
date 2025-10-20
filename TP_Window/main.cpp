@@ -1,8 +1,9 @@
 #include "naif.hpp"
 #include "MorrisPrat.hpp"
 #include "lectureFichier.hpp"
-#include "affichageVector.hpp"
+#include "affichageType.hpp"
 #include "KMP.hpp"
+#include "BoyerMoore.hpp"
 
 int main(int argc, char* argv[]){
     if(argc < 3){
@@ -21,6 +22,8 @@ int main(int argc, char* argv[]){
 
         cout << algoWindow(mot, pattern, tableBords) << endl;
         cout << algoWindow(mot, pattern, tableBordKMP) << endl;
+        map<char, int> retour = dernierOccur(pattern);
+        coutMap(retour);
         return EXIT_SUCCESS;
     }
 }
