@@ -43,3 +43,29 @@ vector<int> bonDecalage(string pattern){
     return res;
 }
 
+int boyerMoore(string mot , string pattern){
+    int n = mot.size();
+    int m = pattern.size();
+    int res = 0;
+    int i = 0;
+    vector<int> bonDec = bonDecalage(pattern);
+    map<char, int> derOccur = dernierOccur(pattern);
+
+    while( i <= n - m + 1){ //Sus
+        int j = m;
+        while(j >= 1 && mot[i+j-2] == pattern[j-1]){
+            j--;
+        }
+        if(j == 0){
+            res++;
+            i += bonDec[0];
+        } else {
+            i += max(bonDec[j], j-derOccur[mot[i+j-1]]);
+        }
+
+    }
+
+
+
+    return res;
+}
