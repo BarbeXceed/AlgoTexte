@@ -22,8 +22,12 @@ int main(int argc, char* argv[]){
 
         cout << algoWindow(mot, pattern, tableBords) << endl;
         cout << algoWindow(mot, pattern, tableBordKMP) << endl;
+        /*
         map<char, int> retour = dernierOccur(pattern);
         coutMap(retour);
+        */
+       cout << boyerMoore(mot, pattern) << endl;
+       
         return EXIT_SUCCESS;
     }
 }
