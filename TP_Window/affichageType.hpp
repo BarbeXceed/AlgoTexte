@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include <map>
 
 using namespace std;
 
@@ -14,4 +15,11 @@ void coutVector(vector<T> tab){
 
     cout << tab[tab.size()-1] << "]" << endl;
     cout << endl;
+}
+
+template <typename X, typename Y>
+void coutMap(map<X, Y> tab){
+    for (auto content : tab){
+        cout << "\"" << content.first << "\" : " << content.second << endl; 
+    }
 }
