@@ -8,4 +8,4 @@ clean:
 	rm -rf build/
 
 compile: prepare
-	g++ *.hpp *.cpp -o build/exec
+	g++ *.cpp -o build/exec
