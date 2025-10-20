@@ -13,7 +13,7 @@ string reverseWord(string word){
 map<char, int> dernierOccur(string pattern){
     int m = pattern.size();
     map<char, int> res;
-    
+
     for(int i = 0; i < m; i++){
         res[pattern[i]] = i;
     }
@@ -22,10 +22,24 @@ map<char, int> dernierOccur(string pattern){
 }
 
 
-/*
+
 vector<int> bonDecalage(string pattern){
     int m = pattern.size();
+    string reversePattern = reverseWord(pattern);
+    vector<int> tabKMP = tableBordKMP(reversePattern);
+    vector<int> res(m+1, 0);
 
-    string reversePattern = reversedWord(pattern);
-    vector<int> tabKMP = tableBordKMP(pattern);
-}*/
+    for(int i = 0; i <= m; i++){
+        res[i] = m - tabKMP[m];
+    }
+    
+    for(int i = 1; i < m; i++){
+        int j = m - tabKMP[i];
+        if(res[j] > i - tabKMP[i]){
+            res[j] = i - tabKMP[i];
+        }
+    }
+
+    return res;
+}
+
