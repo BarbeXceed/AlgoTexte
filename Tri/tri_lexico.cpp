@@ -8,7 +8,7 @@ vector<string> TriLexicographique(vector<string> listeMots, vector<char> alphabe
         bacs.push_back(vector<string>());
     }
 
-    for(int i = alphabet.size(); i > 0; i--){
+    for(int i = alphabet.size()-1; i >= 0; i--){
         listeMots = TriParBac(listeMots, alphabet, bacs, i);
     }
 
@@ -20,7 +20,7 @@ vector<string> TriParBac(vector<string> listeMots, vector<char> alphabet, vector
     //Remplissage du dictionnaire de correspondance
     map<char,int> char2int;
     for(int j = 0; j < alphabet.size(); j++){
-        char2int[j] = alphabet[j];
+        char2int[alphabet[j]] = j;
     }
 
     for(int j = 0; j < listeMots.size(); j++){
